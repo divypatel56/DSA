@@ -1,12 +1,12 @@
 package com.company;
-/**This class is for HashSet*/
+/**This class is for Hashset*/
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Hashing {
+public class Hashset {
     public static void main(String[] args) {
         //Creating
-        HashSet<Integer> set = new HashSet<Integer>();
+        java.util.HashSet<Integer> set = new java.util.HashSet<Integer>();
 
         //Insert
         set.add(1);
