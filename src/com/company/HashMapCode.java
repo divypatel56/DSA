@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /** We are implementing HashMap using Array of Linked List
@@ -100,6 +101,70 @@ public class HashMapCode {
                 }
             }
         }
+
+        /** Get Function: return the passed key's value."*/
+        public V getKey(K key){
+            int bucketIndex = HashFunction(key);
+            int dataIndex = SearchInLL(key,bucketIndex); // valid - 0+ inValid - -1
+
+            if(dataIndex==-1){ //Key doesn't exist
+                return null;
+            }
+            else{ // Key already exist
+                // Update the value of key.
+                Node node = buckets[bucketIndex].get(dataIndex);
+                return node.value;
+            }
+
+        }
+
+        /** Contains Function: return true or false if key exist or not.*/
+        public boolean containsKey(K key){
+            int bucketIndex = HashFunction(key);
+            int dataIndex = SearchInLL(key,bucketIndex); // valid - 0+ inValid - -1
+
+            if(dataIndex==-1){ //Key doesn't exist
+                return false;
+            }
+            else{ // Key already exist
+                return true;
+            }
+        }
+
+        /** Remove: If key exist --> remove and return value.*/
+        public K removeKey(K key){
+            int bucketIndex = HashFunction(key);
+            int dataIndex = SearchInLL(key,bucketIndex); // valid - 0+ inValid - -1
+            if(dataIndex==-1){ //Key doesn't exist
+                return null;
+            }
+            else{ // Key already exist
+                Node node = buckets[bucketIndex].remove(dataIndex);
+                n--;
+                return node.key;
+
+            }
+
+        }
+        /** isEmpty checks the hashmap is empty or not*/
+        public boolean isEmpty(){
+            return n==0;
+        }
+
+        /** This function will display the key as ArrayList*/
+        public ArrayList<K> keySet(){
+            ArrayList<K> keys = new ArrayList<K>();
+            for (int i = 0; i < buckets.length; i++) { //i = bi
+                LinkedList<Node> l1 = buckets[i];
+                for (int j = 0; j <l1.size(); j++) { //j= di
+                    //remove node from linkedlist
+                    Node node  = l1.get(j);
+                    // add key of node to ArrayList
+                    keys.add(node.key);
+                }
+            }
+                return keys;
+        }
     }
 
     public static void main(String[] args) {
@@ -109,6 +174,14 @@ public class HashMapCode {
         countryInfo.put("China",135);
         countryInfo.put("Mexico",95);
         countryInfo.put("Canada",50);
+
+        ArrayList<String> keys = countryInfo.keySet();
+        for (int i = 0; i < keys.size(); i++) {
+            System.out.println(keys.get(i)+": "+ countryInfo.getKey(keys.get(i)));
+        }
+
+
+
 
 
     }
