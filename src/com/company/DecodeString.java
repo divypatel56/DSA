@@ -1,4 +1,8 @@
-class Solution {
+package com.comapny;
+
+import java.util.Stack;
+
+public class DecodeString {
     public String decodeString(String s) {
         // Create number Stack
         Stack<Integer> numStack = new Stack<Integer>();
@@ -50,3 +54,4 @@ class Solution {
 
     }
 }
+

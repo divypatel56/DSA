@@ -10,7 +10,7 @@ public class IsUnique {
             return false;
         }
         //1. convert string to array.
-        char strArr[] = str.toCharArray();
+        char[] strArr = str.toCharArray();
 
         //2. sort array
         Arrays.sort(strArr);

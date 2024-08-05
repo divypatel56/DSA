@@ -8,7 +8,9 @@
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+package com.company;
+import com.company.AddTwoNumberLL;
+public class MaxTwinSumLinkedList {
     public int pairSum(ListNode head) {
         // Make dummy node
         ListNode dummy = new ListNode(0);
@@ -31,7 +33,7 @@ class Solution {
         }
         //reverse the linkedlist
         ListNode PrevNode = null;
-        ListNode currNode = slowptr; 
+        ListNode currNode = slowptr;
         while(currNode != null){
             ListNode nextNode = currNode.next;
             currNode.next = PrevNode;
@@ -41,12 +43,12 @@ class Solution {
         }
         //Linking the last node of the first half to the last node of the reversed second half
         prevSlow.next = PrevNode;
-      
+
         int maxSum = 0;
         ListNode curr1 = head;
         ListNode curr2 = PrevNode;
         while(curr1 != null && curr2!=null){
-            maxSum = Math.max(maxSum, curr1.val+curr2.val);
+            maxSum = Math.max(maxSum, curr1.data+curr2.data);
             curr1 = curr1.next;
             curr2 = curr2.next;
         }
@@ -54,4 +56,8 @@ class Solution {
 
         return maxSum;
     }
+
 }
+
+
+

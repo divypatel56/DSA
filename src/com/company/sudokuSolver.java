@@ -52,9 +52,7 @@ public class sudokuSolver {
 
         // If the current cell is not empty, proceed to the next cell
         if(board[row][col] != '.') {
-            if(helper(board, nrow, ncol)) {
-                return true; // If the next cell is successfully filled, return true
-            }
+            return helper(board, nrow, ncol); // If the next cell is successfully filled, return true
         } else {
             // Fill the current cell with a valid number
             for(int i = 1; i <= 9; i++) {

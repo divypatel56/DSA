@@ -3,7 +3,7 @@ package com.company;
 import java.util.HashMap;
 
 public class MajorityElement {
-    public static void majorityElement(int num[]){
+    public static void majorityElement(int[] num){
         HashMap<Integer,Integer> map = new HashMap<Integer, Integer>();
         int n = num.length;
         for (int i = 0; i < num.length; i++) {
@@ -21,7 +21,7 @@ public class MajorityElement {
         }
     }
     public static void main(String[] args) {
-        int nums[] = {1,3};
+        int[] nums = {1,3};
         majorityElement(nums);
     }
 }

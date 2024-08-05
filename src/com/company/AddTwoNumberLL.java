@@ -9,7 +9,8 @@
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+package com.company;
+public class AddTwoNumberLL {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // Create a dummy node to hold the result
         ListNode result = new ListNode(0);
@@ -26,13 +27,13 @@ class Solution {
 
             // Add values from l1 if it's not null
             if (l1 != null) {
-                sum += l1.val;
+                sum += l1.data;
                 l1 = l1.next;
             }
 
             // Add values from l2 if it's not null
             if (l2 != null) {
-                sum += l2.val;
+                sum += l2.data;
                 l2 = l2.next;
             }
 
@@ -57,3 +58,20 @@ class Solution {
 
     }
 }
+class ListNode {
+    int data;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.data = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.data = val;
+        this.next = next;
+    }
+}
+

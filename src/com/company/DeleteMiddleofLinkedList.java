@@ -8,7 +8,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+package com.company;
+import  com.company.AddTwoNumberLL;
+public class DeleteMiddleofLinkedList {
     public ListNode deleteMiddle(ListNode head) {
         //Make dummy node
         ListNode dummy = new ListNode(0); 

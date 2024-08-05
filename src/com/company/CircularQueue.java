@@ -9,7 +9,7 @@ public class CircularQueue {
     static int rear = -1;
 
     public CircularQueue(int n) {
-        this.size = n;
+        size = n;
         arr = new int[size];
     }
 
@@ -61,16 +61,16 @@ public class CircularQueue {
 
     public static void main(String[] args) {
         CircularQueue q = new CircularQueue(5);
-        q.enqueue(1);
-        q.enqueue(2);
-        q.enqueue(3);
-        q.enqueue(4);
-        q.enqueue(5);
+        enqueue(1);
+        enqueue(2);
+        enqueue(3);
+        enqueue(4);
+        enqueue(5);
         dequeue();
-        q.enqueue(6);
+        enqueue(6);
 
-        while(!q.isEmpty()){
-            System.out.println(q.dequeue());
+        while(!isEmpty()){
+            System.out.println(dequeue());
 
         }
     }

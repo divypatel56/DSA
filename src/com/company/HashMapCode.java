@@ -21,8 +21,8 @@ public class HashMapCode {
         }
 
         private int n; // total no of nodes
-        private int N; // total no of bucket(index of array)
-        private LinkedList<Node> buckets[] ; //LinkedList type of array.
+        private final int N; // total no of bucket(index of array)
+        private LinkedList<Node>[] buckets; //LinkedList type of array.
                                              // N = buckets.length;
 
         public HashMap(){
@@ -84,7 +84,7 @@ public class HashMapCode {
         /** Rehash function : when lambda > K ---> it will increase the value of N: array size.*/
         private void rehash(){
             //1. copy the current buckets array to new array/bucket.
-            LinkedList<Node> oldBuckets[] = buckets;
+            LinkedList<Node>[] oldBuckets = buckets;
             //2.increase the size of buckets
             buckets = new LinkedList[N*2];
             //3.Initialize empty Linked List at every bucket\Index.
@@ -123,12 +123,9 @@ public class HashMapCode {
             int bucketIndex = HashFunction(key);
             int dataIndex = SearchInLL(key,bucketIndex); // valid - 0+ inValid - -1
 
-            if(dataIndex==-1){ //Key doesn't exist
-                return false;
-            }
-            else{ // Key already exist
-                return true;
-            }
+            //Key doesn't exist
+            // Key already exist
+            return dataIndex != -1;
         }
 
         /** Remove: If key exist --> remove and return value.*/

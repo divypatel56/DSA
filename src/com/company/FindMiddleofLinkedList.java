@@ -8,7 +8,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+package com.company;
+import com.company.AddTwoNumberLL;
+public class FindMiddleofLinkedList {
     public ListNode middleNode(ListNode head) {
         ListNode slowptr = head;
         ListNode fastptr = head;
@@ -23,6 +25,9 @@ class Solution {
         }
 
         return slowptr;
-        
+
+
     }
 }
+
+

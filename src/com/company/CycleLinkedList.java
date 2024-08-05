@@ -9,7 +9,8 @@
  *     }
  * }
  */
-public class Solution {
+package com.company;
+public class CycleLinkedList {
     public boolean hasCycle(ListNode head) {
         //Make 2 pointers slow and fast
         //if both meet at some points it means this is a cycled Linked List
@@ -26,6 +27,7 @@ public class Solution {
             }
         }
         return false;
-        
+
     }
 }
+

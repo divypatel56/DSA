@@ -11,8 +11,8 @@ public class CheckPermutation {
             return false;
         }
 
-        char str1Arry[] = str1.toCharArray();
-        char str2Arry[] = str2.toCharArray();
+        char[] str1Arry = str1.toCharArray();
+        char[] str2Arry = str2.toCharArray();
 
         Arrays.sort(str1Arry);
         Arrays.sort(str2Arry);

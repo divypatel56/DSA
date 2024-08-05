@@ -1,15 +1,6 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
+package com.company;
+import com.company.AddTwoNumberLL;
+public class IntersectionOfLL {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int lenA = getListLength(headA);
         int lenB = getListLength(headB);
@@ -44,7 +35,7 @@ public class Solution {
         while(head != null){
             length ++;
             head = head.next;
-           
+
         }
         return length;
     }
